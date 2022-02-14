@@ -1,0 +1,17 @@
+nvm install [설치버전]
+nvm ls
+nvm use [설치버전]
+전역사용 yarn
+npm install -g yarn 
+내부 플젝 설치 
+yarn create react-app week-1
+리액트 설치
+yarn add global create-react-app
+실행
+yarn start
+스타일 컴퍼넌트
+yarn add styled-components
+라우터
+yarn add react-router-dom@5.2.1
+리덕스
+yarn add redux react-redux
