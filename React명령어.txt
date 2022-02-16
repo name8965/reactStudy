@@ -21,3 +21,9 @@ yarn add firebase
 yarn add redux-thunk
 머테리얼 UI
 yarn add @material-ui/core @material-ui/icons
+firebase배포
+yarn add global firebase-tools
+yarn firebase login
+yarn firebase init
+yarn build
+yarn firebase deploy
