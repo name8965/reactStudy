@@ -16,7 +16,9 @@ const REMOVE = "bucket/REMOVE";
 const UPDATE = "bucket/UPDATE";
 // const UPDATE = "my-app/widgets/UPDATE";
 // const REMOVE = "my-app/widgets/REMOVE";
+
 const initialState = {
+  isloaded: false,
   list: [
     // { text: "영화관 가기", completed: false },
     // { text: "매일 책읽기", completed: false },
@@ -30,11 +32,11 @@ export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     // do reducer stuff
     case "bucket/LOAD": {
-      return { list: action.bucket_list };
+      return { list: action.bucket_list, is_loaded: true };
     }
     case "bucket/CREATE": {
       const new_bucket_list = [...state.list, action.bucket];
-      return { list: new_bucket_list };
+      return { ...state, list: new_bucket_list };
     }
     case "bucket/REMOVE": {
       const new_bucket_list = state.list.filter((l, idx) => {
@@ -46,7 +48,7 @@ export default function reducer(state = initialState, action = {}) {
         return parseInt(action.bucket_index) !== idx;
       });
       console.log(new_bucket_list);
-      return { list: new_bucket_list };
+      return { ...state, list: new_bucket_list };
     }
     case "bucket/UPDATE": {
       const new_bucket_list = state.list.map((l, idx) => {
@@ -57,7 +59,7 @@ export default function reducer(state = initialState, action = {}) {
         }
       });
 
-      return { list: new_bucket_list };
+      return { ...state, list: new_bucket_list };
     }
     default:
       return state;
@@ -98,7 +100,7 @@ export const loadBucketFB = () => {
     let bucket_list = [];
 
     bucket_data.forEach((doc) => {
-      bucket_list.push({ ...doc.data() });
+      bucket_list.push({ id: doc.id, ...doc.data() });
     });
 
     dispatch(loadBucket(bucket_list));

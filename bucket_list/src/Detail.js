@@ -7,6 +7,7 @@ import {
   updateBucket,
   updateBucketFB,
 } from "./redux/modules/bucket";
+import Button from "@material-ui/core/Button";
 
 const Detail = (props) => {
   const params = useParams();
@@ -18,7 +19,9 @@ const Detail = (props) => {
   return (
     <div>
       <h1>{bucket_list[bucket_index] ? bucket_list[bucket_index].text : ""}</h1>
-      <button
+      <Button
+        variant="outlined"
+        color="primary"
         onClick={() => {
           // dispatch(updateBucket(bucket_index));
           console.log(bucket_list[bucket_index].id);
@@ -26,8 +29,10 @@ const Detail = (props) => {
         }}
       >
         완료하기
-      </button>
-      <button
+      </Button>
+      <Button
+        variant="outlined"
+        color="secondary"
         onClick={() => {
           console.log("삭제하기");
           // dispatch(removeBucket(bucket_index));
@@ -37,7 +42,7 @@ const Detail = (props) => {
         }}
       >
         삭제하기
-      </button>
+      </Button>
     </div>
   );
 };
