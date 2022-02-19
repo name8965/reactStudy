@@ -27,3 +27,21 @@ yarn firebase login
 yarn firebase init
 yarn build
 yarn firebase deploy
+
+git 명령어
+기존 리포지토리 깔끔하게 pull / push
+git pull
+git add .
+git commit -m "clean push"
+git push
+기존 리포지토리 remote 제거
+git remote remove origin
+새 리포지토리 remote 추가
+git remote add origin https://github.com/계정/리포지토리
+
+리덕스+연결 라우트
+yarn add redux react-redux redux-thunk redux-logger history@4.10.1 connected-react-router@6.8.0
+리덕스 액션즈
+yarn add immer redux-actions
+날짜 시간 편하게 가져오기
+yarn add moment
