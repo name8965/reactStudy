@@ -45,3 +45,7 @@ yarn add redux react-redux redux-thunk redux-logger history@4.10.1 connected-rea
 yarn add immer redux-actions
 날짜 시간 편하게 가져오기
 yarn add moment
+
+
+리코일 설치
+yarn add node-sass recoil react-icons
